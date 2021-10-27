@@ -9,7 +9,7 @@ const UpdateProduct = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleProduct/${productId}`)
+        fetch(`http://obscure-spire-29311.herokuapp.com/singleProduct/${productId}`)
             .then((res) => res.json())
             .then((data) => setProduct(data));
     }, [productId, isUpdate]);
@@ -24,7 +24,7 @@ const UpdateProduct = () => {
 
 
     const onSubmit = (data) => {
-        fetch(`http://localhost:5000/update/${productId}`, {
+        fetch(`http://obscure-spire-29311.herokuapp.com/update/${productId}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

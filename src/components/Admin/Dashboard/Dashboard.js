@@ -6,7 +6,7 @@ const Dashboard = () => {
     const email = "ami@gmail.com";
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${email}`)
+        fetch(`http://obscure-spire-29311.herokuapp.com/myOrders/${email}`)
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, [email]);

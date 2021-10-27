@@ -7,7 +7,7 @@ const Products = () => {
     const [isDelete, setIsDelete] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/products")
+        fetch("http://obscure-spire-29311.herokuapp.com/products")
             .then((response) => response.json())
             .then((data) => setProducts(data));
     }, [isDelete]);
@@ -16,7 +16,7 @@ const Products = () => {
     const handleDeleteProduct = (id) => {
         console.log(id);
 
-        fetch(`http://localhost:5000/deleteProduct/${id}`, {
+        fetch(`http://obscure-spire-29311.herokuapp.com/deleteProduct/${id}`, {
             method: "DELETE",
             headers: { "Content-type": "application/json" },
         })
@@ -36,7 +36,7 @@ const Products = () => {
         data.email = "ami@gmail.com";
         data.status = "pending";
 
-        fetch(`http://localhost:5000/addOrders`, {
+        fetch(`http://obscure-spire-29311.herokuapp.com/addOrders`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
